@@ -1,0 +1,38 @@
+[project]
+name = "jos"
+version = "0.1.0"
+authors = [{ name = "Jonathan Nilsen" }]
+description = "Tool for inspecting embedded device memory using JLink and SVD files."
+readme = "README.rst"
+license = { file = "LICENSE" }
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Build Tools",
+]
+requires-python = ">=3.8"
+dependencies = [
+  "pylink",
+  "svada~=2.2",
+  "tomli",
+  "typing_extensions~=4.4.0",
+]
+
+[project.urls]
+homepage = "https://github.com/j-asn/jos"
+repository = "https://github.com/j-asn/jos.git"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { jos = "src/jos" }
+include-package-data = true
+
+[tool.setuptools.package-data]
+svd = ["py.typed"]
+
+[tool.mypy]
+disallow_untyped_defs = true

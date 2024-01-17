@@ -1,0 +1,28 @@
+Interface:
+
+# Set session configuration
+# Any options set using this method are stored in the environment
+# and re-used on subsequent invocations
+jos session -c config.toml
+
+# Run script file
+jos -s my_commands.txt
+
+# Write a register
+jos A.B.C[0] = 1234
+or
+jos A.B.C[0] = {.FIELD = 1, .FIELD2 = "SomeEnum"}
+
+>
+<0xabcd:0xabce:0x4> A - description of A
+<..>				  B - description of B
+					    C - description of C
+					      [0] = 0x1234
+					        .FIELD = "OtherEnum" (1)  - description of enum value (Description of enum)
+					        .FIELD = "SomeEnum" (1234) <...>
+
+# Read a register
+jos A.B.C[0]
+
+>
+
